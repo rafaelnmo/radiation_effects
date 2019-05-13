@@ -1,0 +1,21 @@
+
+* rafaelnevesmello@gmail.com 13/05/2019
+* implementaçao buffer para test 
+
+.include 16nm_HP.pm
+.include fontes.cir
+.include circuito.cir
+
+
+xbuff_a a buff_a vdd1 gnd buffer
+
+.tran 0.01ns 8ns
+
+.control
+run
+
+set color0=rgb:f/f/f
+set color1=rgb:0/0/0
+.endc
+
+.end

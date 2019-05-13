@@ -9,7 +9,7 @@
 .include fontes.cir
 .include circuito.cir
 
-*Iset gnd xor EXP (0 10u 4ns 10ps 10ps 200ps)
+Iset gnd xor EXP (0 10u 4ns 10ps 10ps 200ps)
 *Iset xor gnd EXP (0 340u 2ns 10ps 10ps 200ps)
 
 
