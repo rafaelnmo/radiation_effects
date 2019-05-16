@@ -16,8 +16,8 @@ Vvdd2 vdd2 gnd 0.7
 Vvdd3 vdd3 gnd 0.7
 
 
-Va a gnd 0.7
-Vb b gnd 0
+Va a gnd 0
+Vb b gnd 1
 
 *Va a gnd PWL (0ns 0 8ns 0)
 *Vb b gnd PWL (0ns 0.7 8ns 0.7)
