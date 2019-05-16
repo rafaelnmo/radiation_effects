@@ -1,23 +1,24 @@
 
-* rafaelnevesnmello@gmail.com 10/05/2018
-* Implementacao XOR v2
+* rafaelnevesnmello@gmail.com 16/05/2018
+* Implementacao XOR e inserção de falhas
 
-*-------------------------------------------------------
+*---------------------------------------------------------------
+* Bibliotecas
+*---------------------------------------------------------------
+.lib "PTM-MG/models" ptm16hp
+
+*---------------------------------------------------------------
 * Parametros e modelos
-*-------------------------------------------------------
-.include 16nm_HP.pm
+*---------------------------------------------------------------
+.global vdd1 vdd2 vdd3 gnd
+.param supply = 0.7 
+
 .include fontes.cir
 .include logic_gates.cir
 
-.param supply = 0.7 
-
-*Iset gnd xor EXP (0 32u 4ns 10ps 10ps 200ps)
-Iset xor gnd EXP (0 37u 4ns 10ps 10ps 200ps)
-
-
-*-------------------------------------------------------
-* Declaracao do circuito
-*-------------------------------------------------------
+*----------------------------------------------------------------
+* Descricao do circuito
+*----------------------------------------------------------------
 Xbuff_a a buff_a vdd1 gnd buffer
 Xbuff_b b buff_b vdd1 gnd buffer
 
@@ -52,9 +53,9 @@ Xxor_v9 buff_a buff_b buff_not_b xor vdd2 gnd xor_v9
 *-------------------------------------------------------
 *.measure v_saida1ns_Xor find V(xor) at=1ns
 .measure v_saida_xor find V(xor) at=4.05ns
-.measure v_saida_inv find V(inv) at=4.05ns
 
-*--------------------------------------------------------
-* Fim da declaracao
-*--------------------------------------------------------
+*-----------------------------------------------------------------
+* Fim da descricao
+*-----------------------------------------------------------------
+
 .end

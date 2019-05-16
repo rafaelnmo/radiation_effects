@@ -3,27 +3,11 @@
 *--------------------------------------------------------------
 * Declaracao fonte DC (source signal)
 *--------------------------------------------------------------
-*vfonte buffer
-*Vvdd1 vdd1 gnd 0.3
-Vvdd1 vdd1 gnd 0.7
-
-*fonte circuito
-*Vvdd2 vdd2 gnd 0.3
-Vvdd2 vdd2 gnd 0.7
-
-*fonte carga
-*Vvdd3 vdd3 gnd 0.3
-Vvdd3 vdd3 gnd 0.7
+Vvdd1 vdd1 gnd supply
+Vvdd2 vdd2 gnd supply
+Vvdd3 vdd3 gnd supply
 
 
-Va a gnd 0
-Vb b gnd 1
+Va a gnd 1
+Vb b gnd 0
 
-*Va a gnd PWL (0ns 0 8ns 0)
-*Vb b gnd PWL (0ns 0.7 8ns 0.7)
-
-
-*Va a gnd PWL (0ns 0 4ns 0 4.01ns 0.7 8ns 0.7 8.01ns 0)
-*Vb b gnd PWL (0ns 0 4ns 0 4.01ns 0.7 8ns 0.7 8.01ns 0)
-
-*Vb b gnd PWL (0ns 0.7 4ns 0.7 4.01ns 0 8ns 0 8.01ns 0.7)

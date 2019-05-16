@@ -1,6 +1,4 @@
 
-* rafaelnevesnmello@gmail.com 10/05/2018
-* Implementacao XOR v2
 
 *-------------------------------------------------------
 * Parametros e modelos
@@ -8,8 +6,6 @@
 .include 16nm_HP.pm
 .include fontes.cir
 .include logic_gates.cir
-
-.param supply = 0.7 
 
 *Iset gnd xor EXP (0 32u 4ns 10ps 10ps 200ps)
 Iset xor gnd EXP (0 37u 4ns 10ps 10ps 200ps)

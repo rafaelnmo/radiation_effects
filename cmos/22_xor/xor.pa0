@@ -1,12 +1,12 @@
        1 xbuff_a.
        2 xbuff_b.
-       3 xinv_a.
-       4 xinv_b.
-       5 xinv_out.
-       6 xxor_v5.
-       7 xbuff_a.xinv_1.
-       8 xbuff_a.xinv_2.
-       9 xbuff_b.xinv_1.
-      10 xbuff_b.xinv_2.
-      11 xinv_out.xinv_1.
-      12 xinv_out.xinv_2.
+       3 xinv_b.
+       4 xinv_out.
+       5 xxor_v9.
+       6 xbuff_a.xinv_1.
+       7 xbuff_a.xinv_2.
+       8 xbuff_b.xinv_1.
+       9 xbuff_b.xinv_2.
+      10 xinv_out.xinv_1.
+      11 xinv_out.xinv_2.
+      12 xxor_v9.xinv.
