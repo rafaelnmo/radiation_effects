@@ -8,6 +8,6 @@ Vvdd2 vdd2 gnd supply
 Vvdd3 vdd3 gnd supply
 
 
-Va a gnd 1
+Va a gnd 0.7
 Vb b gnd 0
 

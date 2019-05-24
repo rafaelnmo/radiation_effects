@@ -22,7 +22,7 @@ Mn1 inv in gnd gnd NMOS w=128n l=16n
 .ends
 
 *------------------------------------------------------
-* buffer entrada
+* buffer
 *------------------------------------------------------
 
 .subckt buffer in out vdd gnd

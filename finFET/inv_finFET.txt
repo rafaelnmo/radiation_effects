@@ -1,0 +1,65 @@
+
+*---Include da tecnologia---
+.include 7nm_FF.pm
+
+.param supply = 0.7V
+.option post=2
+ 
+ *--- Parametros insercao falha
+ .param current = 341u 
+ .param rise_t = 10p 
+ .param fall_t = 200p 
+  
+  .param onset_t = 5n 
+
+  *Iexp0 OUT 0 exp(0 current onset_t rise_t 'onset_t+rise_t' fall_t)
+   
+
+   Vvdd0 vdd0 gnd supply
+   Va  a  gnd  PWL (0n 0 5.0n 0 5.01n supply 10.0n supply 10.01n 0 15n 0) 
+
+
+
+   *Inversor de entrada do sinal de entrada "a"
+   Min1 ina a vdd0 vdd0 pmos_rvt w=27n l=20n nfin=1
+   Min2 gnd a ina gnd nmos_rvt w=27n l=20n nfin=1
+   
+   *Inversor tradicional
+   M1 sout ina vdd0 vdd0 pmos_rvt w=27n l=20n nfin=1
+   M2 gnd ina sout 0 nmos_rvt w=27n l=20n nfin=1
+   
+   *Inversor de saida do sinal de saida sout
+   Mout1 s sout vdd0 vdd0 pmos_rvt w=27n l=20n nfin=1
+   Mout2 gnd sout s gnd nmos_rvt w=27n l=20n nfin=1
+   
+   
+   Cload s gnd 1f
+   
+   
+   *--- Insercao falha para a entrada
+   *--- nmos_rvt (1->0)
+   Iexp0 ina gnd exp(0 341u 2n 10p 2.001n 200p)
+   
+   *--- pmos_rvt (0->1)
+   Iexp1 gnd ina exp(0 341u 12n 10p 12.001n 200p)
+   
+   *--- Insercao falha para a saida
+   *--- nmos_rvt (1->0)
+   Iexp2 sout gnd exp(0 341u 16n 10p 16.001n 200p)
+   
+   *--- pmos_rvt (0->1)
+   Iexp3 gnd sout exp(0 341u 23n 10p 23.001n 200p)
+   
+   *Simulação transiente
+   
+   .tran 0.01n 30n
+   
+   .measure Valor2n find V(sout) at=2.2n
+   
+   .measure Valor12n find V(sout) at=12.2n
+   
+   .measure Valor16n find V(sout) at=16.2n
+   
+   .measure Valor23n find V(sout) at=23.2n
+   
+   .end

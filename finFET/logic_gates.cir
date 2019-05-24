@@ -19,9 +19,9 @@
 *-------------------------------------------------------------
 * buffer
 *-------------------------------------------------------------
-.subckt buffer in buff vdd gnd
-	Xinv_1 in out_1 vdd gnd inversor
-	Xinv_2 out_1 buff vdd gnd inversor
+.subckt buffer in out vdd gnd
+	Xinv_1 in invert vdd gnd inversor
+	Xinv_2 invert out vdd gnd inversor
 .ends
 
 *--------------------------------------------
@@ -196,7 +196,7 @@
 *-------------------------------------------------------------
 *  XOR V9
 *-------------------------------------------------------------
-.subckt XOR_v9 inA not_A inB not_B out vdd gnd
+.subckt XOR_v9 inA inB not_B out vdd gnd
 	Xpfet_1 inA not_B x vdd PFET N=3
 	Xpfet_2 not_B inA x vdd PFET N=3
 	Xpfet_3 vdd x out vdd PFET N=3
