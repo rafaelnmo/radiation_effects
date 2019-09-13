@@ -1,28 +1,27 @@
 * "simulator" "HSPICE" 
 * "version" "H-2013.03-SP1 32-BIT"
 * "format" "HSP"
-* "rundate" "16:15:38 07/08/2019 "
+* "rundate" "17:35:14 09/09/2019 "
 * "netlist" "xor.cir "
 * "runtitle" ""
 * time =    0.            
-* temperature =   25.0000        
+* temperature =   50.0000        
 *** BEGIN: Saved Operating Point ***                     
 .option 
 + gmindc=   1.0000p       
 .nodeset
-+ a = 700.0000m       
-+ b =   0.            
-+ buff_a = 699.9032m       
-+ buff_b = 262.7723u       
-+ inv = 699.9034m       
++ a =   0.            
++ b = 700.0000m       
++ buff_a = 560.2426u       
++ buff_b = 699.6436m       
++ buff_not_b = 417.1119u       
++ inv = 699.8199m       
++ invert = 415.4814u       
 + vdd1 = 700.0000m       
 + vdd2 = 700.0000m       
 + vdd3 = 700.0000m       
-+ xor = 699.1000m       
-+ xbuff_a.invert = 262.0012u       
-+ xbuff_b.invert = 699.9039m       
-+ xinv_out.invert = 268.2287u       
-+ xxor_v4.n3_n4 = 503.6179m       
-+ xxor_v4.p1_p2 = 600.2545u       
-+ xxor_v4.p4_n5 = 699.5023m       
++ xor = 699.8183m       
++ xbuff_a.invert = 699.8215m       
++ xbuff_b.invert = 413.6475u       
++ xxor_v9.p1_n2 = 705.6095u       
 ***   END: Saved Operating Point ***                     

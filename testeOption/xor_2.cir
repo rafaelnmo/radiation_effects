@@ -1,0 +1,67 @@
+
+* rafaelnevesnmello@gmail.com 16/05/2018
+* Implementacao XOR e inserção de falhas
+
+*---------------------------------------------------------------
+* Bibliotecas
+*---------------------------------------------------------------
+.lib "PTM-MG/models" ptm16hp
+
+*---------------------------------------------------------------
+* Parametros e modelos
+*---------------------------------------------------------------
+.global vdd1 vdd2 vdd3 gnd
+.param supply = 0.85 
+
+.include fontes.cir
+.include logic_gates.cir
+
+*----current generator for signals '00' or '11'
+*Iset gnd xor EXP (0 59u 4ns 10ps 10ps 200ps)
+
+*----current generator for signals '10' or '01'
+Iset xor gnd EXP (0 61u 4ns 10ps 10ps 200ps) 
+
+*----------------------------------------------------------------
+* Descricao do circuito
+*----------------------------------------------------------------
+Xbuff_a a buff_a vdd1 gnd buffer
+Xbuff_b b buff_b vdd1 gnd buffer
+
+*Xinv_a buff_a buff_not_a vdd1 gnd inversor
+*Xinv_b buff_b buff_not_b vdd1 gnd inversor
+
+Xinv_out xor inv vdd3 gnd buffer
+
+*Xxor_v1 buff_a buff_not_a buff_b buff_not_b xor vdd2 gnd xor_v1
+*Xxor_v2 buff_a buff_b xor vdd2 gnd xor_v2
+*Xxor_v3 buff_a buff_b xor vdd2 gnd xor_v3
+Xxor_v4 buff_a buff_b xor vdd2 gnd xor_v4
+*Xxor_v5 buff_a buff_not_a buff_b buff_not_b xor vdd2 gnd xor_v5
+*Xxor_v6 buff_a buff_not_a buff_b buff_not_b xor vdd2 gnd xor_v6 
+*Xxor_v7 buff_a buff_not_a buff_b buff_not_b xor vdd2 gnd xor_v7
+*Xxor_v8 buff_a buff_b xor vdd2 gnd xor_v8
+*Xxor_v9 buff_a buff_b buff_not_b xor vdd2 gnd xor_v9
+*Xxor_vtest buff_a buff_not_a buff_not_b buff_b xor vdd2 gnd xor_vtest
+
+*-------------------------------------------------------
+* Estimulos
+*-------------------------------------------------------
+.tran 0.01ns 8ns
+
+*-------------------------------------------------------
+* Controle
+*-------------------------------------------------------
+.option post=2
+
+*-------------------------------------------------------
+* Measures
+*-------------------------------------------------------
+*.measure v_saida1ns_Xor find V(xor) at=1ns
+.measure v_saida_xor find V(xor) at=4.05ns
+.measure v_saida_inv find V(inv) at=4.05ns
+*-----------------------------------------------------------------
+* Fim da descricao
+*-----------------------------------------------------------------
+
+.end

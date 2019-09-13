@@ -32,6 +32,17 @@ Xinv_2 invert out vdd gnd inversor
 
 .ends
 
+*------------------------------------------------------
+* buffer test
+*------------------------------------------------------
+
+.subckt buffert in invert out vdd gnd
+
+Xinv_1 in invert vdd gnd inversor
+Xinv_2 invert out vdd gnd inversor
+
+.ends
+
 *-----------------------------------------------------
 * Circuito XOR_V1
 *-----------------------------------------------------

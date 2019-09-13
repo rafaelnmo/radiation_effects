@@ -1,0 +1,6 @@
+$DATA1 SOURCE='HSPICE' VERSION='H-2013.03-SP1 32-BIT'
+.TITLE ' '
+ v_saida_xor      v_saida_inv      i_source         temper            
+ alter#            
+ -5.703e-02        1.543e-03        1.282e-05        125.0000         
+ 1                 

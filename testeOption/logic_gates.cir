@@ -1,0 +1,208 @@
+* Biblioteca de portas logicas CMOS
+
+*-------------------------------------------------------------
+* inversor
+*-------------------------------------------------------------
+.subckt inversor in out vdd gnd
+	Xpfet_1 vdd in out in PFET N=3
+	Xnfet_1 out in gnd in NFET N=3
+.ends
+
+*-------------------------------------------------------------
+* inversor 4 (FO4)
+*-------------------------------------------------------------
+.subckt inv4 in inv vdd gnd
+	Xpfet_1 vdd in inv in PFET N=12 
+	Xnfer_1 inv in gnd in NFET N=12
+.ends
+
+*-------------------------------------------------------------
+* buffer
+*-------------------------------------------------------------
+.subckt buffer in out vdd gnd
+	Xinv_1 in invert vdd gnd inversor
+	Xinv_2 invert out vdd gnd inversor
+.ends
+
+*--------------------------------------------
+* NAND
+*--------------------------------------------
+.subckt nand in_a in_b nand_out vdd gnd 
+	Xpfet_1 vdd in_a nand_out in_a PFET N=3
+	Xpfet_2 vdd in_b nand_out in_b PFET N=3
+
+	Xnfet_1 nand_out in_a n1_n2 in_a NFET N=3
+	Xnfet_2 n1_n2 in_b gnd in_b NFET N=3
+.ends
+
+*--------------------------------------------
+* AND logic gate
+*--------------------------------------------
+.subckt and in_a in_b and_out vdd gnd 
+	Xinv_1 in_inv and_out vdd gnd inversor
+
+	Xpfet_1 vdd in_a in_inv in_a PFET N=3
+	Xpfet_2 vdd in_b in_inv in_b PFET N=3
+
+	Xnfet_1 in_inv in_a n1_n2 in_a NFET N=3
+	Xnfet_2 n1_n2 in_b gnd in_b NFET N=3
+.ends
+
+*-------------------------------------------------------------
+* NOR
+*-------------------------------------------------------------
+.subckt nor in_a in_b nor_out vdd gnd
+	Xpfet_1 vdd in_a p1_p2 in_a PFET N=3
+	Xpfet_2 p1_p2 in_b nor_out in_b PFET N=3
+
+	Xnfet_1 nor_out in_a gnd in_a NFET N=3
+	Xnfet_2 nor_out in_b gnd in_b NFET N=3
+.ends
+
+*--------------------------------------------
+* OR
+*--------------------------------------------
+.subckt or in_a in_b or_out vdd gnd
+	Xinv_1 in_inv or_out vdd gnd inversor
+
+	Xpfet_1 vdd in_a p1_p2 in_a PFET N=3
+	Xpfet_2 p1_p2 in_b in_inv in_b PFET N=3
+
+	Xnfet_1 in_inv in_a gnd in_a NFET N=3
+	Xnfet_2 in_inv in_b gnd in_b NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V1
+*-------------------------------------------------------------
+.subckt xor_v1 in_a in_not_a in_b in_not_b xor vdd gnd
+
+	Xpfet_1 vdd in_not_a p1_p2 in_not_a PFET N=3
+	Xpfet_2 p1_p2 in_b xor in_b PFET N=3
+	Xpfet_3 vdd in_a p3_p4 in_a PFET N=3
+	Xpfet_4 p3_p4 in_not_b xor in_not_b PFET N=3
+
+	Xnfet_1 xor in_not_b n1_n2 in_not_b NFET N=3
+	Xnfet_2 n1_n2 in_not_a gnd in_not_a NFET N=3
+	Xnfet_3 xor in_b n3_n4 in_b NFET N=3
+	Xnfet_4 n3_n4 in_a gnd in_a NFET N=3
+
+.ends
+
+
+*-------------------------------------------------------------
+*  XOR V2
+*-------------------------------------------------------------
+.subckt xor_v2 in_a in_b xor vdd gnd
+	Xpfet_1 vdd in_b p1_n1 in_b PFET N=3
+	Xpfet_2 vdd in_a p1_n1 in_a PFET N=3
+	Xpfet_3 vdd p1_n1 p3_n3 p1_n1 PFET N=3
+	Xpfet_4 vdd in_a p4_p5 in_a PFET N=3
+	Xpfet_5 p4_p5 in_b p3_n3 in_b PFET N=3
+	Xpfet_6 vdd p3_n3 xor p3_n3 PFET N=3
+
+	Xnfet_1 p1_n1 in_b n1_n2 in_b NFET N=3
+	Xnfet_2 n1_n2 in_a gnd in_a NFET N=3
+	Xnfet_3 p3_n3 p1_n1 n3_n4 p1_n1 NFET N=3
+	Xnfet_4 n3_n4 in_a gnd in_a NFET N=3
+	Xnfet_5 n3_n4 in_b gnd in_b NFET N=3
+	Xnfet_6 xor p3_n3 gnd p3_n3 NFET N=3
+
+.ends
+
+*-------------------------------------------------------------
+*  XOR V3
+*-------------------------------------------------------------
+.subckt XOR_v3 inA inB out vdd gnd
+	Xpfet_1 vdd inA i vdd PFET N=3
+	Xpfet_2 i l out vdd PFET N=3
+	Xpfet_3 vdd inB l vdd PFET N=3
+	Xpfet_4 l i out vdd PFET N=3
+
+	Xnfet_1 out inB i gnd NFET N=3
+	Xnfet_2 i inA gnd gnd NFET N=3
+	Xnfet_3 out inA l gnd NFET N=3
+	Xnfet_4 l inB gnd gnd NFET N=3
+	Xnfet_5 out l k gnd NFET N=3
+	Xnfet_6 k i gnd gnd NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V4
+*-------------------------------------------------------------
+.subckt XOR_v4 inA inB out vdd gnd
+	Xpfet_1 vdd inA i vdd PFET N=3
+	Xpfet_2 i k out vdd PFET N=3
+	Xpfet_3 vdd inB k vdd PFET N=3
+	Xpfet_4 k i out vdd PFET N=3
+
+	Xnfet_1 out inB i gnd NFET N=3
+	Xnfet_2 i inA gnd gnd NFET N=3
+	Xnfet_3 out k m gnd NFET N=3
+	Xnfet_4 m i gnd gnd NFET N=3
+	Xnfet_5 k inB gnd gnd NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V5
+*-------------------------------------------------------------
+.subckt XOR_v5 inA not_A inB not_B out vdd gnd
+	Xpfet_1 inA inB out vdd PFET N=3
+	Xpfet_2 not_A not_B out vdd PFET N=3
+
+	Xnfet_1 inA not_B out gnd NFET N=3
+	Xnfet_2 not_A inB out gnd NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V6
+*-------------------------------------------------------------
+.subckt XOR_v6 inA not_A inB not_B out vdd gnd
+	Xpfet_1 inA not_B x vdd PFET N=3
+	Xpfet_2 not_A inB x vdd PFET N=3
+	Xpfet_3 vdd x out vdd PFET N=3
+
+	Xnfet_1 inA inB x gnd NFET N=3
+	Xnfet_2 not_A not_B x gnd NFET N=3
+	Xnfet_3 out x gnd gnd NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V7
+*-------------------------------------------------------------
+.subckt XOR_v7 inA not_A inB not_B out vdd gnd
+	Xpfet_1 inB not_A x vdd PFET N=3
+	Xpfet_2 not_B inA x vdd PFET N=3
+	Xpfet_3 vdd x out vdd PFET N=3
+
+	Xnfet_1 inA inB x gnd NFET N=3
+	Xnfet_2 not_A not_B x gnd NFET N=3
+	Xnfet_3 out x gnd gnd NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V8
+*-------------------------------------------------------------
+.subckt XOR_v8 inA inB out vdd gnd
+	Xpfet_1 inA inB out vdd PFET N=3
+	Xpfet_2 inB inA out vdd PFET N=3
+	Xpfet_3 vdd inB x vdd PFET N=3
+
+	Xnfet_1 inA x out gnd NFET N=3
+	Xnfet_2 x inA out gnd NFET N=3
+	Xnfet_3 x inB gnd gnd NFET N=3
+.ends
+
+*-------------------------------------------------------------
+*  XOR V9
+*-------------------------------------------------------------
+.subckt XOR_v9 inA inB not_B out vdd gnd
+	Xpfet_1 inA not_B x vdd PFET N=3
+	Xpfet_2 not_B inA x vdd PFET N=3
+	Xpfet_3 vdd x out vdd PFET N=3
+
+	Xnfet_1 inA inB x gnd NFET N=3
+	Xnfet_2 inB inA x gnd NFET N=3
+	Xnfet_3 out x gnd gnd NFET N=3
+.ends
+
