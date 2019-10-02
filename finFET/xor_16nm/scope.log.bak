@@ -1,0 +1,665 @@
+Mdi:ArrangeIcons
+wm geometry . 927x994+57+19
+ScopeSigMgr:loadpffile /home/rafaelneves/spice/radiation_effects/finFET/xor_16nm/xor.tr0 1 openonly
+# PF:1
+wm geometry .sigmgr._PF:1 288x349+942+530
+wm geometry .sigmgr._PF:1 288x349+935+526
+wm geometry .sigmgr._PF:1 288x349+924+518
+wm geometry .sigmgr._PF:1 288x349+898+507
+wm geometry .sigmgr._PF:1 288x349+883+507
+wm geometry .sigmgr._PF:1 288x349+872+488
+wm geometry .sigmgr._PF:1 288x349+854+473
+wm geometry .sigmgr._PF:1 288x349+835+454
+wm geometry .sigmgr._PF:1 288x349+814+429
+wm geometry .sigmgr._PF:1 288x349+788+399
+wm geometry .sigmgr._PF:1 288x349+787+399
+wm geometry .sigmgr._PF:1 288x349+764+398
+wm geometry .sigmgr._PF:1 288x349+728+394
+wm geometry .sigmgr._PF:1 288x349+700+390
+wm geometry .sigmgr._PF:1 288x349+696+387
+wm geometry .sigmgr._PF:1 288x349+673+383
+wm geometry .sigmgr._PF:1 288x349+661+377
+wm geometry .sigmgr._PF:1 288x349+655+376
+wm geometry .sigmgr._PF:1 288x349+653+373
+wm geometry .sigmgr._PF:1 288x349+652+371
+wm geometry .sigmgr._PF:1 288x349+649+364
+wm geometry .sigmgr._PF:1 288x349+647+354
+wm geometry .sigmgr._PF:1 288x349+647+342
+wm geometry .sigmgr._PF:1 288x349+647+327
+wm geometry .sigmgr._PF:1 288x349+647+307
+wm geometry .sigmgr._PF:1 288x349+657+262
+wm geometry .sigmgr._PF:1 288x349+665+239
+wm geometry .sigmgr._PF:1 288x349+676+211
+wm geometry .sigmgr._PF:1 288x349+690+176
+wm geometry .sigmgr._PF:1 288x349+693+160
+wm geometry .sigmgr._PF:1 288x349+695+147
+wm geometry .sigmgr._PF:1 288x349+695+137
+wm geometry .sigmgr._PF:1 288x349+695+130
+wm geometry .sigmgr._PF:1 288x349+695+123
+wm geometry .sigmgr._PF:1 288x349+695+113
+wm geometry .sigmgr._PF:1 288x349+695+106
+wm geometry .sigmgr._PF:1 288x349+695+102
+wm geometry .sigmgr._PF:1 288x349+695+101
+wm geometry .sigmgr._PF:1 288x349+695+100
+wm geometry .sigmgr._PF:1 288x349+694+100
+wm geometry .sigmgr._PF:1 288x349+694+101
+wm geometry .sigmgr._PF:1 288x349+694+102
+wm geometry .sigmgr._PF:1 288x349+694+103
+wm geometry .sigmgr._PF:1 288x349+694+104
+wm geometry .sigmgr._PF:1 288x349+694+106
+wm geometry .sigmgr._PF:1 288x349+694+107
+wm geometry .sigmgr._PF:1 288x349+694+108
+wm geometry .sigmgr._PF:1 288x349+694+109
+wm geometry .sigmgr._PF:1 288x349+694+111
+wm geometry .sigmgr._PF:1 288x349+695+111
+wm geometry .sigmgr._PF:1 288x349+695+110
+wm geometry .sigmgr._PF:1 288x349+695+108
+wm geometry .sigmgr._PF:1 288x349+696+107
+wm geometry .sigmgr._PF:1 288x349+696+106
+wm geometry .sigmgr._PF:1 288x350+696+106
+wm geometry .sigmgr._PF:1 288x363+696+106
+wm geometry .sigmgr._PF:1 288x388+696+106
+wm geometry .sigmgr._PF:1 288x462+696+106
+wm geometry .sigmgr._PF:1 288x493+696+106
+wm geometry .sigmgr._PF:1 288x575+696+106
+wm geometry .sigmgr._PF:1 288x599+696+106
+wm geometry .sigmgr._PF:1 288x615+696+106
+wm geometry .sigmgr._PF:1 288x647+696+106
+wm geometry .sigmgr._PF:1 288x667+696+106
+wm geometry .sigmgr._PF:1 288x683+696+106
+wm geometry .sigmgr._PF:1 288x688+696+106
+wm geometry .sigmgr._PF:1 288x692+696+106
+wm geometry .sigmgr._PF:1 288x703+696+106
+wm geometry .sigmgr._PF:1 288x711+696+106
+wm geometry .sigmgr._PF:1 288x714+696+106
+Mdi:Resize 490 799
+Mdi:Move 5 5
+Mdi:Resize 623 799
+Mdi:Move 5 5
+pf:read PF:1 v(inv)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:1 v(xor)
+# WF:1:2
+Graph addsignal WF:1:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+pf:read PF:1 v(buff_not_a)
+# WF:1:3
+Graph addsignal WF:1:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.62020992744533 0.25423539354539} {2.2453n 4.9147n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.50210689526306 0.41976262513558} {3.6481698543n 4.1251537937n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.54701502066535 0.34206928168138} {3.5531n 4.9684n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.48034920082309 0.35957760463611} {3.8300565567n 4.4167691958n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.49442143035614 0.18639286432369} {3.0694n 5.3267n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+pf:read PF:5 v(buff_a)
+# WF:5:3
+Graph addsignal WF:5:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal14
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.44562482583615 0.28398607336368} {3.0162n 5.5941n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisY(1,0)} -range {{0.65 0.35 exact} {500u 100u exact}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.47819782974235 0.40134317762336} {3.7969963114n 4.9015118967n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.47612270366115 0.33278267788367} {3.3276n 6.9782n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.45012072081722 0.38668513494123} {3.185148656n 5.131560688n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.44562482583615 0.36328055570866} {3.3968n 5.5768n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41859150638311 0.40608737647486} {3.8456078921n 4.3386989403n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisY(1,0)} -range {{0.4275 0.4125 exact} {500u 100u exact}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.59459171007234 0.33109004566438} {3.5353n 5.1443n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42270821173385 0.39891986703035} {3.8261437717n 4.559292304n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41734033091484 0.40672706943175} {3.8189953043n 4.2699140919n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41580158589392 0.41195885328797} {3.9820976586n 4.1520843095n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41460052863131 0.41321287519027} {4.00467371354n 4.1032919232n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.57981548826613 0.24128904440868} {3.12n 6.0786n}}
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(1) xor.tr0}}
+wm geometry .sigmgr._PF:1 289x714+695+106
+ScopeSigMgr:loadpffile /home/rafaelneves/spice/radiation_effects/cmos/xor_16nm/xor.tr0 1 openonly
+# PF:17
+ScopeSigMgr:Unload 0 {{(1) xor.tr0}}
+Graph0 delsignal Signal45
+Graph0 delsignal Signal46
+Graph0 delsignal Signal47
+wm geometry .sigmgr._PF:17 288x349+969+563
+wm geometry .sigmgr._PF:17 288x349+931+557
+wm geometry .sigmgr._PF:17 288x349+909+551
+wm geometry .sigmgr._PF:17 288x349+879+545
+wm geometry .sigmgr._PF:17 288x349+858+536
+wm geometry .sigmgr._PF:17 288x349+834+522
+wm geometry .sigmgr._PF:17 288x349+804+507
+wm geometry .sigmgr._PF:17 288x349+791+507
+wm geometry .sigmgr._PF:17 288x349+781+488
+wm geometry .sigmgr._PF:17 288x349+773+478
+wm geometry .sigmgr._PF:17 288x349+763+465
+wm geometry .sigmgr._PF:17 288x349+748+450
+wm geometry .sigmgr._PF:17 288x349+738+438
+wm geometry .sigmgr._PF:17 288x349+732+428
+wm geometry .sigmgr._PF:17 288x349+726+414
+wm geometry .sigmgr 472x220+512+136
+wm geometry .sigmgr._PF:17 288x349+726+413
+wm geometry .sigmgr._PF:17 288x349+725+411
+wm geometry .sigmgr._PF:17 288x349+722+407
+wm geometry .sigmgr._PF:17 288x349+717+399
+wm geometry .sigmgr._PF:17 288x349+712+393
+wm geometry .sigmgr._PF:17 288x349+705+383
+wm geometry .sigmgr._PF:17 288x349+697+374
+wm geometry .sigmgr._PF:17 288x349+696+363
+wm geometry .sigmgr._PF:17 288x349+696+349
+wm geometry .sigmgr._PF:17 288x349+679+332
+wm geometry .sigmgr._PF:17 288x349+674+317
+wm geometry .sigmgr._PF:17 288x349+671+300
+wm geometry .sigmgr._PF:17 288x349+668+284
+wm geometry .sigmgr._PF:17 288x349+668+268
+wm geometry .sigmgr._PF:17 288x349+668+247
+wm geometry .sigmgr._PF:17 288x349+668+237
+wm geometry .sigmgr._PF:17 288x349+668+230
+wm geometry .sigmgr._PF:17 288x349+668+223
+wm geometry .sigmgr._PF:17 288x349+668+219
+wm geometry .sigmgr._PF:17 288x349+668+213
+wm geometry .sigmgr._PF:17 288x349+668+209
+wm geometry .sigmgr._PF:17 288x349+669+204
+wm geometry .sigmgr._PF:17 288x349+672+201
+wm geometry .sigmgr._PF:17 288x349+676+196
+wm geometry .sigmgr._PF:17 288x349+682+187
+wm geometry .sigmgr._PF:17 288x349+684+184
+wm geometry .sigmgr._PF:17 288x349+685+180
+wm geometry .sigmgr._PF:17 288x349+688+175
+wm geometry .sigmgr._PF:17 288x349+688+172
+wm geometry .sigmgr._PF:17 288x349+689+168
+wm geometry .sigmgr._PF:17 288x349+691+164
+wm geometry .sigmgr._PF:17 288x349+691+162
+wm geometry .sigmgr._PF:17 288x349+693+160
+wm geometry .sigmgr._PF:17 288x349+693+159
+wm geometry .sigmgr._PF:17 288x349+693+157
+wm geometry .sigmgr._PF:17 288x349+692+154
+wm geometry .sigmgr._PF:17 288x349+692+149
+wm geometry .sigmgr._PF:17 288x349+692+145
+wm geometry .sigmgr._PF:17 288x349+692+139
+wm geometry .sigmgr._PF:17 288x349+692+133
+wm geometry .sigmgr._PF:17 288x349+692+129
+wm geometry .sigmgr._PF:17 288x349+692+125
+wm geometry .sigmgr._PF:17 288x349+692+124
+wm geometry .sigmgr._PF:17 288x349+692+122
+wm geometry .sigmgr._PF:17 288x349+691+120
+wm geometry .sigmgr._PF:17 288x349+691+119
+wm geometry .sigmgr._PF:17 288x349+691+117
+wm geometry .sigmgr._PF:17 288x349+691+114
+wm geometry .sigmgr._PF:17 288x349+693+112
+wm geometry .sigmgr._PF:17 288x349+693+110
+wm geometry .sigmgr._PF:17 288x349+694+109
+wm geometry .sigmgr._PF:17 288x349+695+108
+wm geometry .sigmgr._PF:17 288x352+695+108
+wm geometry .sigmgr._PF:17 288x368+695+108
+wm geometry .sigmgr._PF:17 288x414+695+108
+wm geometry .sigmgr._PF:17 288x565+695+108
+wm geometry .sigmgr._PF:17 288x703+695+108
+wm geometry .sigmgr._PF:17 288x799+695+108
+wm geometry .sigmgr._PF:17 288x815+695+108
+wm geometry .sigmgr._PF:17 288x838+695+108
+wm geometry .sigmgr._PF:17 288x846+695+108
+wm geometry .sigmgr._PF:17 288x848+695+108
+wm geometry .sigmgr._PF:17 288x849+695+108
+pf:read PF:17 v(inv)
+# WF:17:1
+Graph addsignal WF:17:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:17 v(xor)
+# WF:17:2
+Graph addsignal WF:17:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:17 v(buff_a)
+# WF:17:3
+Graph addsignal WF:17:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(2) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(2) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(2) xor.tr0}}
+ScopeSigMgr:loadpffile /home/rafaelneves/spice/testes/radiation_efects/cmos/xor_16nm/xor.tr0 1 openonly
+# PF:18
+ScopeSigMgr:Unload 0 {{(2) xor.tr0}}
+Graph0 delsignal Signal0
+Graph0 delsignal Signal1
+Graph0 delsignal Signal2
+wm geometry .sigmgr._PF:18 288x349+994+597
+wm geometry .sigmgr._PF:18 288x349+984+597
+wm geometry .sigmgr._PF:18 288x349+950+597
+wm geometry .sigmgr._PF:18 288x349+917+593
+wm geometry .sigmgr._PF:18 288x349+881+580
+wm geometry .sigmgr._PF:18 288x349+833+566
+wm geometry .sigmgr._PF:18 288x349+789+550
+wm geometry .sigmgr._PF:18 288x349+745+532
+wm geometry .sigmgr._PF:18 288x349+730+528
+wm geometry .sigmgr._PF:18 288x349+726+525
+wm geometry .sigmgr._PF:18 288x349+724+523
+wm geometry .sigmgr._PF:18 288x349+719+517
+wm geometry .sigmgr._PF:18 288x349+714+507
+wm geometry .sigmgr._PF:18 288x349+709+507
+wm geometry .sigmgr._PF:18 288x349+701+475
+wm geometry .sigmgr._PF:18 288x349+696+452
+wm geometry .sigmgr._PF:18 288x349+696+428
+wm geometry .sigmgr._PF:18 288x349+674+405
+wm geometry .sigmgr 472x220+512+136
+wm geometry .sigmgr._PF:18 288x348+674+406
+wm geometry .sigmgr._PF:18 288x371+674+383
+wm geometry .sigmgr._PF:18 288x458+674+296
+wm geometry .sigmgr._PF:18 288x523+674+231
+wm geometry .sigmgr._PF:18 288x582+674+172
+wm geometry .sigmgr._PF:18 288x592+674+162
+wm geometry .sigmgr._PF:18 288x615+674+139
+wm geometry .sigmgr._PF:18 288x621+674+133
+wm geometry .sigmgr._PF:18 288x631+674+123
+wm geometry .sigmgr._PF:18 288x635+674+119
+wm geometry .sigmgr._PF:18 288x635+674+120
+wm geometry .sigmgr._PF:18 288x635+678+121
+wm geometry .sigmgr._PF:18 288x635+687+121
+wm geometry .sigmgr._PF:18 288x635+690+121
+wm geometry .sigmgr._PF:18 288x635+694+119
+wm geometry .sigmgr._PF:18 288x635+696+118
+wm geometry .sigmgr._PF:18 288x635+697+117
+wm geometry .sigmgr._PF:18 288x635+699+116
+wm geometry .sigmgr._PF:18 288x635+699+115
+wm geometry .sigmgr._PF:18 288x635+699+113
+wm geometry .sigmgr._PF:18 288x635+699+112
+wm geometry .sigmgr._PF:18 288x635+698+112
+wm geometry .sigmgr._PF:18 288x635+697+111
+wm geometry .sigmgr._PF:18 288x635+697+110
+pf:read PF:18 v(inv)
+# WF:18:1
+Graph addsignal WF:18:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+pf:read PF:18 v(xor)
+# WF:18:2
+Graph addsignal WF:18:2 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal1
+pf:read PF:18 v(buff_a)
+# WF:18:3
+Graph addsignal WF:18:3 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal2
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal1 add
+# Signal1
+Graph sigconfig Signal1 -region 0 -rgnindex 1
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.53704729739289 0.31014308637493} {2.8574n 4.9685n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.40440948503885 0.34127887794111} {3.5567498065n 4.1632757059n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.37077032561489 0.3527155819425} {3.9571999317n 4.3019620219n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.40529646518891 0.30282359569693} {3.3001n 5.1729n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.39200447308104 0.35494955152367} {3.7586894125n 4.3779842782n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38051566830456 0.36114951588568} {3.8401510739n 4.3551660482n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41993544654491 0.23206851914294} {3.5554n 5.0026n}}
+Graph axisconfig {AxisY(0,0) AxisY(1,0)} -range {{0.65 0.35 exact} {360u 280u exact}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42237527677091 0.22474902846494} {3.3852n 5.1558n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38766869150109 0.3327725114161} {3.8289187271n 4.5759032559n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.43457442790091 0.24182784004694} {3.0617n 5.2069n}}
+Graph:DSel
+Graph itemselect Signal19 add
+# Signal19
+GrMeas:AtX Graph0 Signal19 {} xyrangeVisible
+# M:0
+Graph:DSel
+Graph itemselect Signal18 add
+# Signal18
+GrMeas:AtX Graph0 Signal18 {} xyrangeVisible
+# M:1
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38766869150109 0.28977050368285} {3.5799238842n 4.997279144n}}
+Graph:DSel
+GrMeas:Select Graph0 M:1 0 1
+GrMeas:MovePoint Graph0 M:1 0 4.0499507496979n 0.27534049634701
+Graph:DSel
+GrMeas:Select Graph0 M:0 0 1
+GrMeas:MovePoint Graph0 M:0 0 4.0517232646942n 0.39948572494309
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.175 0.475 } {2n 6n } {200u 360u }}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.43439906479844 0.34412534643645} {3.6415215543n 4.5864250608n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.40682593339586 0.37907286457512} {3.9687274704n 4.3454119763n}}
+Graph:DSel
+GrMeas:Select Graph0 M:0 0 1
+GrMeas:MovePoint Graph0 M:0 0 4.0500180860437n 0.39829796625219
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.35 0.43 } {3.5n 4.7n } {-50u 550u }}
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.29 0.49 } {2n 6n } {-600u 0.001 }}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.43067069923433 0.24585355961486} {3.3610466333n 4.8403197782n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42884082656483 0.25683279563186} {3.7843319584n 4.3379780477n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41877652688258 0.23944900527161} {3.9310942199n 4.2468455052n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41145703620458 0.23304445092836} {3.9561454982n 4.1987981983n}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38949856417059 0.29160037635235} {4.0137569697n 4.10394072721n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38683635348379 0.32416321455342} {4.028691555n 4.08319109192n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38322006762069 0.34759854632109} {4.03424243384n 4.06906158242n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.3799700104303 0.35526672939206} {4.04340019795n 4.06312383988n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+GrMeas:Select Graph0 M:3 0 1
+GrMeas:DelMfromMenu Graph0 M:3
+GrMeas:DelMfromMenu Graph0 M:2
+Graph:DSel
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.40773629541491 0.25402699117694} {3.0617n 5.3091n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.37851932815359 0.35107123811109} {3.9438394239n 4.3779842782n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36666251558018 0.36172185937253} {4.0091982309n 4.1522106535n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36498010013777 0.36227188858691} {4.03258437907n 4.07756812383n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36438905126247 0.36308984166713} {4.04051420594n 4.08398407467n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38333799315492 0.34430070953892} {3.9641n 4.7302n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36594098663081 0.36121381556793} {3.9974576445n 4.1730309312n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.54924644852289 0.5150888253589} {3.3511n 4.4237n}}
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.49 0.57 } {2n 6n } {200u 360u }}
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal21 add
+# Signal21
+GrMeas:AtX Graph0 Signal21 {} xyrangeVisible
+# M:4
+Graph:DSel
+GrMeas:Select Graph0 M:4 0 1
+GrMeas:MovePoint Graph0 M:4 0 4.0373633733075n 0.48887934396206
+GrMeas:MovePoint Graph0 M:4 0 4.0383539345974n 0.4799999642603
+GrMeas:MovePoint Graph0 M:4 0 4.0361000374689n 0.50020361701655
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.43 0.63 } {0.0 8n } {-50u 550u }}
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.25 0.85 } {-4n 12n } {-600u 0.001 }}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.35887361236295 0.30519734739096} {2.28402n 9.29111n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.33942104908692 0.25890665162894} {3.6746n 5.3261n}}
+Graph axisconfig {AxisY(0,0) AxisX(0) AxisY(1,0)} -range {{0.19 0.39 } {1.5n 7.5n } {200u 360u }}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36177853461582 0.34530968059033} {3.3802n 5.934n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36389051262471 0.36206063995521} {3.9438394239n 4.2949859972n}}
+Graph:DSel
+Graph itemselect Signal22 add
+# Signal22
+GrMeas:AtX Graph0 Signal22 {} xyrangeVisible
+# M:5
+Graph:DSel
+GrMeas:Select Graph0 M:5 0 1
+GrMeas:MovePoint Graph0 M:5 0 4.0504997833951n 0.3635300102295
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.53948712761889 0.24914733072494} {2.7042n 5.292n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.51976008344244 0.32335375024947} {3.5563951123n 4.7311400122n}}
+Graph:DSel
+GrMeas:Select Graph0 M:4 0 1
+GrMeas:MovePoint Graph0 M:4 0 4.05000738289n 0.37554529103632
+GrMeas:MovePoint Graph0 M:4 0 4.0765787413603n 0.42032211000839
+Graph:DSel
+GrMeas:Select Graph0 M:5 0 1
+GrMeas:MovePoint Graph0 M:5 0 4.0496509574796n 0.36192863263281
+Graph:DSel
+GrMeas:Select Graph0 M:4 0 1
+GrMeas:MovePoint Graph0 M:4 0 4.0441372746011n 0.42816446134513
+Graph:DSel
+GrMeas:Select Graph0 M:5 0 1
+GrMeas:MovePoint Graph0 M:5 0 4.0424684139334n 0.34838054977984
+Graph:DSel
+GrMeas:Select Graph0 M:4 0 1
+GrMeas:MovePoint Graph0 M:4 0 4.047500974465n 0.39801087593837
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph0 M:5 0 2
+GrMeas:HideResult Graph0 M:4 0
+GrMeas:HideResult Graph0 M:4 0
+GrMeas:HideResult Graph0 M:5 0
+GrMeas:HideResult Graph0 M:5 0
+Graph:DSel
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41017612564091 0.31258291660093} {3.3852n 5.973n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.37690802355767 0.3563219560258} {3.905532525n 4.2119877163n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36382621294246 0.36190484663948} {4.0449513365n 4.0870889253n}}
+Graph:DSel
+Graph itemselect Signal22 add
+# Signal22
+Graph itemselect Signal22 add
+# Signal22
+GrMeas:AtX Graph0 Signal22 {} xyrangeVisible
+# M:6
+GrMeas:AtX Graph0 Signal22 {} xyrangeVisible
+# M:7
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38577782338092 0.24426767027294} {2.9425n 6.2625n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.38122855619872 0.34463110280872} {3.606761589n 5.394416872n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36960073196981 0.36029887923318} {3.7842273451n 4.3205239298n}}
+Graph:DSel
+GrMeas:Select Graph0 M:7 0 1
+GrMeas:MovePoint Graph0 M:7 0 4.0504998608282n 0.36352999831626
+Graph:DSel
+Graph:DSel
+Graph itemselect Signal21 add
+# Signal21
+GrMeas:AtX Graph0 Signal21 {} xyrangeVisible
+# M:8
+Graph:DSel
+GrMeas:Select Graph0 M:8 0 1
+GrMeas:MovePoint Graph0 M:8 0 4.0610996857964n 0.36434000884756
+Graph:DSel
+Graph:DSel
+Graph:DSel
+GrMeas:Select Graph0 M:7 0 1
+GrMeas:DelMfromMenu Graph0 M:7
+Graph:DSel
+GrMeas:Select Graph0 M:6 0 1
+GrMeas:MovePoint Graph0 M:6 0 4.0504998608282n 0.36352999831626
+Graph:DSel
+GrMeas:Select Graph0 M:8 0 1
+GrMeas:MovePoint Graph0 M:8 0 4.0574678511699n 0.36666648465893
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+GrMeas:DelMfromMenu Graph0 M:12
+GrMeas:DelMfromMenu Graph0 M:11
+GrMeas:DelMfromMenu Graph0 M:10
+GrMeas:DelMfromMenu Graph0 M:9
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.39309731405891 0.30770325614893} {3.5725n 5.5134n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36896078484361 0.35157699448336} {3.8608411429n 4.5695187728n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.36537804661562 0.36177929703227} {3.9455120864n 4.2082777108n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.4882506928729 0.21742953778694} {3.0787n 4.9175n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42060639955208 0.24493862328011} {3.897374575n 4.5145412797n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42335120855633 0.22938470558936} {3.8921136725n 4.4411792236n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.39681805484859 0.3071542940431} {3.9505583402n 4.177639744n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.4858108626469 0.29306427479293} {3.4661n 5.2654n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42609601756058 0.30623935770835} {3.6834068893n 4.4554836623n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.39553714428491 0.30526342592293} {4.0543n 4.6253n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.43213459767491 0.29062444456693} {3.6045n 4.608n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.41969146321733 0.3126439120516} {3.8405616394n 4.3033751671n}}
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph:Select Graph0
+Graph:DSel
+Graph itemselect Signal39 add
+# Signal39
+GrMeas:AtX Graph0 Signal39 {} xyrangeVisible
+# M:13
+Graph:DSel
+GrMeas:Select Graph0 M:13 0 1
+GrMeas:MovePoint Graph0 M:13 0 4.0499719481772n 0.39884045581719
+Graph:DSel
+Graph itemselect Signal40 add
+# Signal40
+GrMeas:AtX Graph0 Signal40 {} xyrangeVisible
+# M:14
+Graph:DSel
+GrMeas:Select Graph0 M:14 0 1
+GrMeas:MovePoint Graph0 M:14 0 4.0499619724222n 0.36518228562732
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph:Select Graph0
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.44921340925691 0.23206851914294} {3.2411n 4.9886n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.43158563556908 0.2943451853566} {3.8232601991n 4.3812316484n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.5053295044549 0.20767021688294} {2.8778n 5.0405n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.40752789304646 0.32701349558847} {3.75897976n 4.4942909724n}}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.39780516941286 0.36425750380537} {3.8532377386n 3.7472664168n}}
+Graph axisconfig {AxisX(0) AxisY(0,0) AxisY(1,0)} -range {all all all} -zoomed {0 0 0}
+Graph:DSel
+Graph axisconfig {AxisY(0,0) AxisX(0)} -range {{0.42237527677091 0.27842529343693} {3.6218n 5.0405n}}
+Graph:DSel
+Graph:DSel
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}
+ScopeSigMgr:Reload 0 {{(3) xor.tr0}}

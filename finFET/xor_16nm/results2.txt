@@ -1,0 +1,2 @@
+XOR V1, pulse= 00, i= 59.0, temp= 25
+

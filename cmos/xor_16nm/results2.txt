@@ -1,0 +1,5 @@
+XOR V1, pulse= 00, i= 15.5, temp= 25
+XOR V1, pulse= 01, i= 15.0, temp= 25
+XOR V1, pulse= 10, i= 15.0, temp= 25
+XOR V1, pulse= 11, i= 15.5, temp= 25
+
